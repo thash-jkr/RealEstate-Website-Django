@@ -8,6 +8,7 @@ class Listing(models.Model):
     bathroom = models.IntegerField()
     square_feet = models.IntegerField()
     address = models.CharField(max_length=150)
+    image = models.ImageField()
 
     def __str__(self):
         return self.title

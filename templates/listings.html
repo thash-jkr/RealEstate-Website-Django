@@ -1,3 +1,19 @@
-{% for lis in listings %}
-<h1><a href="{% url 'listings:details' lis.pk %}">{{ lis }}</a></h1>
+{% extends "base.html" %}
+
+{% block content %}
+
+<a href="{% url 'listings:create' %}" class="text-blue-500">Create a new listing</a>
+
+{% for listing in listings %}
+
+<div class="mt-2 px-3 py-2 bg-gray-100 rounded-sm">
+    <h3 class="text-3xl text-gray-900">{{ listing.title }}</h3>
+    <img src="{{ listing.image.url }}" alt=""/>
+    <a href="{% url 'listings:details' listing.pk %}" class="text-blue-500">
+        View details
+    </a>
+</div>
+
 {% endfor %}
+
+{% endblock content %}

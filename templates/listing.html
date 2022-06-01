@@ -1,4 +1,21 @@
-<h1>{{ listing }}</h1>
-<h3>{{ listing.price }}</h3>
-<h6>{{ listing.address }}</h6>
-<h2><a href="{% url 'listings:delete' listing.pk %}">Delete</a></h2>
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="px-3 py-2 bg-gray-100 rounded-sm">
+    <h3 class="text-3xl text-gray-900">{{ listing.title }}</h3>
+    <p class="text-gray-900">${{ listing.price }}</p>
+    <p class="text-gray-600 text-sm">{{ listing.address }}</p>
+
+    <div class="mt-5 py-5 border-t border-gray-200">
+        <a href="{% url 'listings:update' listing.pk %}" class="text-blue-500">
+            Edit
+        </a>
+        <a href="{% url 'listings:delete' listing.pk %}" class="ml-3 text-blue-500">
+            Delete
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}
