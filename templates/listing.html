@@ -1,3 +1,4 @@
 <h1>{{ listing }}</h1>
 <h3>{{ listing.price }}</h3>
 <h6>{{ listing.address }}</h6>
+<h2><a href="{% url 'listings:delete' listing.pk %}">Delete</a></h2>
