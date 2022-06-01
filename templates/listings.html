@@ -1,0 +1,3 @@
+{% for lis in listings %}
+<h1><a href="{% url 'listings:details' lis.pk %}">{{ lis }}</a></h1>
+{% endfor %}

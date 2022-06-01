@@ -7,7 +7,7 @@ class Listing(models.Model):
     bedroom = models.IntegerField()
     bathroom = models.IntegerField()
     square_feet = models.IntegerField()
-    adress = models.CharField(max_length=150)
+    address = models.CharField(max_length=150)
 
     def __str__(self):
         return self.title
